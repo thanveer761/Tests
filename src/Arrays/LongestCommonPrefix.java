@@ -14,6 +14,14 @@ public class LongestCommonPrefix {
         String anss=longestCommonPrefix1(strs);
         System.out.println(anss);
     }
+    @Test
+    public void test2(){
+        String[] strs = {"ab","a"};
+        String ans=longestCommonPrefix(strs);
+        System.out.println(ans);
+        String anss=longestCommonPrefix1(strs);
+        System.out.println(anss);
+    }
 
     /*
     pseudocode: 0[n*m]
@@ -24,17 +32,21 @@ public class LongestCommonPrefix {
       *return the op if misatch found for strs[j] with character i
       *if match foun append character to op
      */
-    public String longestCommonPrefix(String[] strs){
-        String op="";
-        for (int i = 0; i < strs[0].length() ; i++) {
-            char c= strs[0].charAt(i);
-            for (int j = 1; j < strs.length; j++) {
-                if(i>= strs[j].length()||strs[j].charAt(i)!=c){
-                    return op;
+    public String longestCommonPrefix(String[] words) {
+        String op = "";
+        for (int i = 0; i < words[0].length(); i++) {
+            char c = words[0].charAt(i);
+            boolean matched = true;
+            for (int j = 1; j < words.length; j++) {
+                if (i >= words[j].length() || words[j].charAt(i) != c) {
+                    matched = false;
+                    break;
                 }
-
             }
-            op+=c;
+            if (matched) {
+                op += c;
+            }else break;
+
         }
         return op;
     }
@@ -46,10 +58,10 @@ public class LongestCommonPrefix {
 
      */
 
-    public String longestCommonPrefix1(String[] strs){
-        Arrays.sort(strs);
-        String first=strs[0];
-        String last=strs[strs.length-1];
+    public String longestCommonPrefix1(String[] words){
+        Arrays.sort(words);
+        String first=words[0];
+        String last=words[words.length-1];
         int i=0;
         while(i<first.length()&&first.charAt(i)==last.charAt(i)){
             i++;

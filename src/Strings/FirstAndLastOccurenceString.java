@@ -2,49 +2,57 @@ package Strings;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.LinkedHashMap;
 
 public class FirstAndLastOccurenceString {
 
-        @Test
-        public void test1() {
-            String s = "amazonaanazzz";
-           int[] op = firstAndLastOccurenceString(s);
-           System.out.println(Arrays.toString(op));
-            int[] op1 = firstAndLastOccurrenceString1(s,'a');
-            System.out.println(Arrays.toString(op1));
-        }
+    @Test
+    public void test1() {
+        String s = "amaz";
+        firstAndLastOccurenceString1(s);// fix 1: no need to store return, just call it
+        firstAndLastOccurenceString2(s);
+    }
 
-        //brute Force
-       private int[] firstAndLastOccurenceString(String s) {
+        /*pseudocode:
+       - create a boolean[] visited of size 256 (covers all ASCII characters)
+       - guard: if string is null or empty, print message and stop
+      - traverse the string character by character:
+      - store current char as ch
+       - if ch is NOT visited:
+        - mark visited[ch] = true
+        - print ch, s.indexOf(ch) as first occurrence, s.lastIndexOf(ch) as last occurrence
+
+         */
+        private void firstAndLastOccurenceString1 (String s){  // fix 2: void since we're printing
+            if (s == null || s.isEmpty()) {
+                System.out.println("null or empty string");
+                return;
+            }
+
+            boolean[] visited = new boolean[256];  // 256 covers all ASCII characters
+
             for (int i = 0; i < s.length(); i++) {
-                for (int j = s.length()-1; j >=0 ; j--) {
-                    if(s.charAt(i)==s.charAt(j)){
-                        return new int[] {i,j};
-                    }
+                char ch = s.charAt(i);
+
+                if (!visited[ch]) {
+                    visited[ch] = true;  // fix 3: mark as visited so we don't repeat
+                    System.out.println("char--'" + ch + "'--first--" + s.indexOf(ch) + "--last--" + s.lastIndexOf(ch));
                 }
             }
-            return new int[] {-1,-1};
-        }
-    private int[] firstAndLastOccurrenceString1(String s, char target) {
-        int left = 0, right = s.length() - 1;
-        char[] ch = s.toCharArray();
-
-        // move left pointer until it finds the target
-        while (left <= right && ch[left] != target) {
-            left++;
         }
 
-        // move right pointer until it finds the target
-        while (right >= left && ch[right] != target) {
-            right--;
+    private void firstAndLastOccurenceString2 (String s) {
+        LinkedHashMap<Character, int[]> map = new LinkedHashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (!map.containsKey(ch)) {
+                map.put(ch, new int[]{i, i});  // first time seen: first=i, last=i
+            } else {
+                map.get(ch)[1] = i;            // seen again: update last index
+            }
         }
-
-        if (left > right) {
-            return new int[] {-1, -1}; // target not found at all
+        for (var entry : map.entrySet()) {
+            System.out.println("char='" + entry.getKey() + "' first=" + entry.getValue()[0] + " last=" + entry.getValue()[1]);
         }
-
-        return new int[] {left, right};
     }
     }
-
