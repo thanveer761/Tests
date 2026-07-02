@@ -36,16 +36,18 @@ public class LongestCommonPrefix {
         String op = "";
         for (int i = 0; i < words[0].length(); i++) {
             char c = words[0].charAt(i);
-            boolean matched = true;
+            boolean matched = false;
             for (int j = 1; j < words.length; j++) {
                 if (i >= words[j].length() || words[j].charAt(i) != c) {
-                    matched = false;
+                    matched = true;
                     break;
                 }
             }
             if (matched) {
-                op += c;
-            }else break;
+                break; // stop as soon as a mismatch is found
+            }else {
+                op += c;      // character matched in all words, keep it
+            }
 
         }
         return op;
