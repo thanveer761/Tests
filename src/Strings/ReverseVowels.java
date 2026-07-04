@@ -8,7 +8,7 @@ import java.util.*;
 public class ReverseVowels {
     @Test
     public void test1(){
-        String s1="ThanveerAhmed";
+        String s1="Thanveer";
         String op1=reverseVowels(s1);
         System.out.println(op1);
       String op=reverseVowels2(s1);
