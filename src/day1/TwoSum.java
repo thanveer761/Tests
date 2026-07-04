@@ -92,6 +92,9 @@ public class TwoSum {
         int target=9;
         int[] op= twoSum(nums,target);
         System.out.println(Arrays.toString(op));
+        int[] op1= twoSumTwoPointer(nums,target);
+        System.out.println(Arrays.toString(op1));
+
     }
     /*
     *pseudocode: Bruteforce-->o[N2]
@@ -101,6 +104,9 @@ public class TwoSum {
    *if nums of i +j equals to target
     we found it return of i & j
     *if not found return -1,-1*/
+
+
+
     public int[] twoSum(int[] nums, int target){
         for(int i=0;i<nums.length;i++){
             for(int j=i+1;j<nums.length;j++){
@@ -113,4 +119,31 @@ public class TwoSum {
         }
         return new int[] {-1,-1};
 }
+
+    /*two pointer:
+       --initialize left ponter as 0 and right pointer till last index
+       ---condition left< right
+       ---sum ==target
+        --return the index of left, right
+       --if sum< target
+       --increment left++
+       ---else right --
+
+       --return -1,-1
+
+        */
+    public int[] twoSumTwoPointer(int[] nums, int target){
+       int left=0, right= nums.length-1;
+       while(left<right){
+           int sum = nums[left] + nums[right];
+           if (sum == target) {
+               return new int[]{left, right};
+           } else if (sum < target) {
+               left++;
+           } else {
+               right--;
+           }
+       }
+        return new int[]{-1, -1};
+    }
 }

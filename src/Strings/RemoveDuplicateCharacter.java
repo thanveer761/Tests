@@ -46,17 +46,25 @@ public class RemoveDuplicateCharacter {
         return op;
     }
     private String removeDupsUsingTwoPointer(String s) {
-        String m = s.replace(" ", "");
-        char[] chars = m.toCharArray();
-        java.util.Arrays.sort(chars);   // two-pointer dedup needs sorted input
+        String m =s.replace(" ", "");
+        char[] ch = m.toCharArray();
+        boolean[] seen = new boolean[256];
 
-        int slow = 0;
-        for (int fast = 1; fast < chars.length; fast++) {
-            if (chars[fast] != chars[slow]) {
-                slow++;
-                chars[slow] = chars[fast];
+        int left = 0, right = ch.length - 1;
+        while (left <= right) {
+            if (!seen[ch[left]]) {
+                seen[ch[left]] = true;
+                left++;
+            } else {
+                // duplicate found at left -- pull in a char from the right boundary
+                char temp = ch[left];
+                ch[left] = ch[right];
+                ch[right] = temp;
+                right--;
+                // don't move left -- recheck the newly swapped-in character
             }
         }
-        return new String(chars, 0, slow + 1);
+
+        return new String(Arrays.copyOf(ch, left));
     }
 }

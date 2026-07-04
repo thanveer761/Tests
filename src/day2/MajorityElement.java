@@ -8,7 +8,7 @@ public class MajorityElement {
 
     @Test
     public void test1() {
-        int[] nums = {2,2,2,2,2,2,1,1};
+        int[] nums = {2,2,1,1,1,2,2};
        int op= majorityElem(nums);
         System.out.println(op);
     }
