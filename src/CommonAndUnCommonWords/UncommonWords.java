@@ -1,4 +1,4 @@
-package Strings;
+package CommonAndUnCommonWords;
 
 import org.junit.jupiter.api.Test;
 

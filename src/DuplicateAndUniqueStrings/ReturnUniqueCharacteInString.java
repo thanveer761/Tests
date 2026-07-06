@@ -1,4 +1,4 @@
-package Strings;
+package DuplicateAndUniqueStrings;
 
 import org.junit.jupiter.api.Test;
 

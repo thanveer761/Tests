@@ -1,4 +1,4 @@
-package Strings;
+package ReverseStringProblems;
 
 import org.junit.jupiter.api.Test;
 
