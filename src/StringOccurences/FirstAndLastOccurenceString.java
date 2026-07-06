@@ -1,4 +1,4 @@
-package Strings;
+package StringOccurences;
 
 import org.junit.jupiter.api.Test;
 
