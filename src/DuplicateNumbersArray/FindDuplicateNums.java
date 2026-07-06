@@ -1,4 +1,4 @@
-package day1;
+package DuplicateNumbersArray;
 
 import org.junit.jupiter.api.Test;
 
