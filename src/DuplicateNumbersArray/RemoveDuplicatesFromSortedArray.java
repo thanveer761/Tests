@@ -10,10 +10,12 @@ public class RemoveDuplicatesFromSortedArray {
     @Test
     public void test1() {
         int[] nums = {1,1,2};
-        int op1 = removeDups(nums);
+        int op1 = removeDups1(nums);
         System.out.println(op1);
-        int[] op2 = removeDups1(nums);
-        System.out.println(Arrays.toString(op2));
+        int op2 = removeDups2(nums);
+        System.out.println(op2);
+        int[] op3 = removeDups3(nums);
+        System.out.println(Arrays.toString(op3));
 
     }
 
@@ -27,7 +29,7 @@ public class RemoveDuplicatesFromSortedArray {
     * and, copy back to the nums
      */
 
-    private int removeDups(int[] nums) {
+    private int removeDups1(int[] nums) {
 
         List<Integer> op = new ArrayList<>();
             op.add(nums[0]);
@@ -41,7 +43,32 @@ public class RemoveDuplicatesFromSortedArray {
             }
        return op.size();
     }
-    public int[] removeDups1(int[] nums) {
+
+    /*
+    brute Force:
+    * initailize left as 0
+    * traverse and check if value in left is not equal right
+    *increment left
+    * assign left value to right value
+    * return left+1 to get total count of it
+
+     */
+    private int removeDups2(int[] nums) {
+        int left=0;
+        for (int right = 0; right < nums.length; right++) {
+            if(nums[left]!=nums[right]){
+                left++;
+                nums[left]=nums[right];
+            }
+
+        }
+
+        return left+1;
+
+    }
+
+
+    public int[] removeDups3(int[] nums) {
 
         int left=0;
         for (int right = 0; right < nums.length ; right++) {
