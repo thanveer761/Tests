@@ -1,8 +1,6 @@
-package day2;
+package Arrays;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 public class MajorityElement {
 
