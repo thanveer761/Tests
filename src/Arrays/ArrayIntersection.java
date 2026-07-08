@@ -24,15 +24,17 @@ public class ArrayIntersection {
     }
 
     /*
-    -- initialise set1 and add nums1 to it
--- initialise another result set
--- traverse nums2 (not the result set)
---   if set1 contains the current value from nums2
---     add it to the result set
--- initialise empty array op of size = result set size
--- initialise i as 0
--- traverse result set, assign each value to op[i], then increment i
--- return op
+   -- initialise n as mat.length
+-- initialise sum as 0
+-- traverse i from 0 to n-1 (rows)
+--   traverse j from 0 to n-1 (columns)
+--     if i equals j AND i+j equals n-1
+--       add mat[i][j] to sum        (center cell, add once)
+--     else if i equals j
+--       add mat[i][j] to sum        (primary diagonal)
+--     else if i+j equals n-1
+--       add mat[i][j] to sum        (secondary diagonal)
+-- return sum
 
      */
 
