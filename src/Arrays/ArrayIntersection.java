@@ -23,20 +23,21 @@ public class ArrayIntersection {
         System.out.println(Arrays.toString(op));
     }
 
-    /*
-   -- initialise n as mat.length
--- initialise sum as 0
--- traverse i from 0 to n-1 (rows)
---   traverse j from 0 to n-1 (columns)
---     if i equals j AND i+j equals n-1
---       add mat[i][j] to sum        (center cell, add once)
---     else if i equals j
---       add mat[i][j] to sum        (primary diagonal)
---     else if i+j equals n-1
---       add mat[i][j] to sum        (secondary diagonal)
--- return sum
+/*
+-- initialise an empty set called set1
 
-     */
+-- traverse each number n in nums1
+--   add n to set1                      (store all unique values from nums1)
+
+-- initialise an empty set called result
+
+-- traverse each number n in nums2
+--   if set1 contains n
+--     add n to result                  (n is in both arrays, and sets auto-avoid duplicates)
+
+-- convert result set into an int array
+-- return the array
+*/
 
     private int[] arrIntersection(int[] nums1, int[] nums2) {
 
