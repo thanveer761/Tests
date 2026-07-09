@@ -1,6 +1,7 @@
 package DuplicateNumbersArray;
 
 import org.junit.jupiter.api.Test;
+import java.util.*;
 
 public class FindDuplicateNums {
 
@@ -9,6 +10,28 @@ public class FindDuplicateNums {
         int[] nums={3,1,3,4,2};
       int op= findDups(nums);
         System.out.println(op);
+        int op1=findDupsUsingTwoPointer(nums);
+        System.out.println(op1);
+
+    }
+
+    @Test
+    public void test2() {
+        int[] nums={1,2,3,4,5};
+        int op= findDups(nums);
+        System.out.println(op);
+        int op1=findDupsUsingTwoPointer(nums);
+        System.out.println(op1);
+
+    }
+    @Test
+    public void test3() {
+        int[] nums={3,3,3};
+        int op= findDups(nums);
+        System.out.println(op);
+        int op1=findDupsUsingTwoPointer(nums);
+        System.out.println(op1);
+
     }
     /*
     brute force:
@@ -27,4 +50,17 @@ public class FindDuplicateNums {
         }
         return  -1;
     }
+    public int findDupsUsingTwoPointer(int[] nums){
+        Arrays.sort(nums);
+        int left = 0;
+        int right = 1;
+        while (right < nums.length) {
+            if (nums[left] == nums[right]) {
+                return nums[left];
+            }
+            left++;
+            right++;
+        }
+        return -1;
+       }
 }
