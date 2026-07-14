@@ -6,7 +6,7 @@ public class ReverseCharacterStringAtItsPosition {
 
     @Test
     public void test1(){
-        String s ="Thanveer Ahmed muju";
+        String s ="Thanveer Ahmed raihu";
         String op= reverseWords(s);
         System.out.println(op);
     }

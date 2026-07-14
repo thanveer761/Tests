@@ -5,12 +5,19 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LongestCommonPrefix {
+public class LongestSubString {
 
     @Test
     public void test1(){
         String s = "pwwkew";
-        int op=longestCommonPrefix(s);
+        int op=longestSubString(s);
+        System.out.println(op);
+
+    }
+    @Test
+    public void test2(){
+        String s = "abcabcbb";
+        int op=longestSubString(s);
         System.out.println(op);
 
     }
@@ -26,7 +33,7 @@ public class LongestCommonPrefix {
     * update maxLen = max(maxLen, right - left + 1)
     * finally, return maxLen
      */
-    public int longestCommonPrefix(String s){
+    public int longestSubString(String s){
         int left=0,maxLen=0;
         Set<Character> window= new HashSet<>();
         for (int right = 0; right < s.length(); right++) {
