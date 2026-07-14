@@ -20,7 +20,13 @@ public class SortColorsDutchFlag {
         System.out.println(Arrays.toString(op));
     }
 /*
+Rules:
+- define three pointers left=0, right=nums.length-1, mid=0
 
+- while mid <= right:
+    - if value at mid is 0 -> swap left and mid, increment both pointers (left++, mid++)
+    - if value at mid is 1 -> increment mid alone, no swaps
+    - if value at mid is 2 -> swap right with mid and decrement right (mid stays the same)
  */
     private int[] sortColorsUsingDutchFlag(int[] nums) {
         int left=0, mid=0;
