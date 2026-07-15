@@ -20,7 +20,7 @@ public class ProductLessThanK {
 -- if k is less than or equal to 1
 --   return 0                          (nothing can ever be smaller than 1, since all nums >= 1)
 
--- traverse right from 0 to nums.length-1
+-- traverse right from 0 to nums.length
 
 --   multiply product by nums[right]   (bring the new right element into the window)
 
