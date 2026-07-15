@@ -46,7 +46,6 @@ public class IsomorphicStrings {
  * TC: O(n)
  * SC: O(1)
  */
-     */
 
 
     public boolean isIsomorphic(String s, String t) {
