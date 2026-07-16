@@ -19,7 +19,7 @@ public class TotalFruit {
             -- initialise left as 0
             -- initialise maxFruits as 0
 
-            -- traverse right from 0 to fruits.length-1
+            -- traverse right from 0 to fruits.length
 
             --   add fruits[right] to basketCount               (increment its count, or insert with count 1 if new)
 
