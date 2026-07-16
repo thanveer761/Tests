@@ -33,7 +33,6 @@ public class TrapRainWater {
          * - if the ans is less than zero, do a math.max() with 0, since the water can't be saved in -ve units
          * - accumulate the result into save variable and proceed
          * return save
-         * <p>
          * TC: O(n^2)
          * SC: O(1)
          */
