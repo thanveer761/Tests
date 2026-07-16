@@ -22,7 +22,7 @@ public class RotateArray {
         int[] op=  rotate(nums,k);
         System.out.println(Arrays.toString(op));
     }
-    /*
+    /**
     * initialise till nums.length as n
     * initalize empty result array
     * traverse till n
