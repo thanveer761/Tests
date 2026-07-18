@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-public class LongestNiceSubString {
+public class ShortestDistanceCharacter {
     @Test
     public void testCase1() {
         String s="aaab";
