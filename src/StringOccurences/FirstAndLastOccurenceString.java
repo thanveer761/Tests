@@ -2,14 +2,17 @@ package StringOccurences;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 public class FirstAndLastOccurenceString {
 
     @Test
     public void test1() {
         String s = "amaz";
-        firstAndLastOccurenceString1(s);// fix 1: no need to store return, just call it
+        List<String> result1 = firstAndLastOccurenceString1(s);
+        System.out.println(result1);
         firstAndLastOccurenceString2(s);
     }
 
@@ -23,10 +26,11 @@ public class FirstAndLastOccurenceString {
         - print ch, s.indexOf(ch) as first occurrence, s.lastIndexOf(ch) as last occurrence
 
          */
-        private void firstAndLastOccurenceString1 (String s){  // fix 2: void since we're printing
+        private List<String> firstAndLastOccurenceString1 (String s){  // fix 2: void since we're printing
+            List<String> result = new ArrayList<>();
             if (s == null || s.isEmpty()) {
                 System.out.println("null or empty string");
-                return;
+                return result;
             }
 
             boolean[] visited = new boolean[256];  // 256 covers all ASCII characters
@@ -35,10 +39,12 @@ public class FirstAndLastOccurenceString {
                 char ch = s.charAt(i);
 
                 if (!visited[ch]) {
-                    visited[ch] = true;  // fix 3: mark as visited so we don't repeat
-                    System.out.println("char--'" + ch + "'--first--" + s.indexOf(ch) + "--last--" + s.lastIndexOf(ch));
+                    visited[ch] = true;
+                    result.add("char--'" + ch + "'--first--" + s.indexOf(ch) + "--last--" + s.lastIndexOf(ch));
                 }
             }
+
+            return result;
         }
 
     private void firstAndLastOccurenceString2 (String s) {
