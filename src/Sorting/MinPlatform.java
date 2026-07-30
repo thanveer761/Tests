@@ -22,13 +22,13 @@ public class MinPlatform {
 
     }
     /*
-    Time	Event	Platforms Needed	Max Platforms
- 935Train arrives	1	1
-1000	Train arrives	2	2
-1100	Train arrives	3	3
-1130	Train departs	2	3
-1200	Train departs	1	3
-1240	Train departs	0	3
+               Time	  Event	         Platforms Needed	Max Platforms
+                935   Train arrives	  1	                 1
+                1000  Train arrives	  2	                 2
+                1100  Train arrives	  3	                 3
+                1130  Train departs	  2	                 3
+                1200  Train departs	  1	                 3
+                1240  Train departs	  0	                 3
      */
 
     /*
