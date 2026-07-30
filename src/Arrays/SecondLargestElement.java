@@ -24,6 +24,14 @@ public class SecondLargestElement {
         int[] nums = {7, 7, 7, 7};
         System.out.println(secondLargest(nums)); // expect Integer.MIN_VALUE (no second largest found)
     }
+    @Test
+    public void positiveCase_elseIfBranch() {
+        // tests that the else-if branch correctly updates secondLargest
+        // even when the qualifying number appears LATE in the array,
+        // and even when it repeats
+        int[] nums = {20, 5, 15, 3, 15};
+        System.out.println(secondLargest(nums)); // expect 15
+    }
     /*
    * GOAL: find the second largest element in an array
 
