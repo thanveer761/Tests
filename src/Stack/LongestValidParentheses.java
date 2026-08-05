@@ -1,4 +1,4 @@
-package Strings;
+package Stack;
 
 import org.junit.jupiter.api.Test;
 
