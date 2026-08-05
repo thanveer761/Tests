@@ -25,6 +25,7 @@ public class ContainsDuplicate {
         System.out.println(containsDuplicate(nums)); // expect true
     }
     /*
+
     * GOAL: determine if any value appears more than once in nums
 
     * initialize an empty set called seen
