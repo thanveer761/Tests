@@ -39,7 +39,8 @@ Hence, output should be 4
             * result += oddCount
         * evenCount++
 
-            * return result*/
+            * return result
+            * */
     private int countOddSubArrays(int[] nums) {
         int runningSum = 0, oddCount = 0, result = 0, evenCount = 1;
         for (int i = 0; i < nums.length; i++) {
