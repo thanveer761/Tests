@@ -14,7 +14,7 @@ public class MaxSumSubArrayKadanesAlgo {
     -- initialise maxSum as nums[0]
 -- initialise currSum as nums[0]
 
--- traverse i from 1 to nums.length-1
+-- traverse i            from 1 to nums.length-1
 
 --   currSum = max(currSum + nums[i], nums[i])
 --   (decide: is it better to EXTEND the current subarray by adding nums[i],

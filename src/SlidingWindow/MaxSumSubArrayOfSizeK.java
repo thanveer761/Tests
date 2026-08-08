@@ -11,7 +11,7 @@ public class MaxSumSubArrayOfSizeK {
         Assertions.assertEquals(16, maxSumSubArray(nums, k));
     }
 /*
- * initialise a variable maxSum=0, sum=0, left=0 to keep track of running sum and max value
+ * initialise a variable maxSum=0, sum=0 to keep track of running sum and max value
  * iterate the array of window size (k), compute running sum
  * compare the sum with maxSum and update as needed
  * iterate the array from size k till the end
