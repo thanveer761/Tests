@@ -54,16 +54,16 @@ public class SearchInsertPosition{
 */
 
     public int searchInsertPosition(int[] nums, int n) {
-        int left = 0, right = nums.length - 1;
+        int low = 0, high = nums.length - 1;
         int result = nums.length;
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
             if (nums[mid] >= n) {
                 result = mid;
-                right = mid - 1;   // keep searching left for an even earlier match
+                high = mid - 1;   // keep searching left for an even earlier match
             } else {
-                left = mid + 1;
+                low = mid + 1;
             }
         }
 
