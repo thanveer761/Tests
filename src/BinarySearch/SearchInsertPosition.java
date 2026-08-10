@@ -31,26 +31,27 @@ public class SearchInsertPosition{
         System.out.println(op1); // expect 0
     }
 
-    /*
-    * GOAL: find the index of the first element in a sorted array
-    *        that is >= n (using binary search since array is sorted)
+   /*
+* GOAL: find the index of the first element in a sorted array
+*        that is >= n (using binary search since array is sorted)
 
-    * initialize left = 0, right = nums.length - 1
-    * initialize result = -1 (default: no valid index found)
+* initialize left = 0, right = nums.length - 1
+* initialize result = nums.length
+    (default: if no element is >= n, the answer is "insert at the very end")
 
-    * while left <= right:
-        * mid = (left + right) / 2
-        * if nums[mid] >= n:
-            - this index is a valid candidate
-            - record result = mid
-            - but there might be an even earlier valid index, so keep searching left
-            - move right = mid - 1
-        * else:
-            - nums[mid] is too small, valid answer must be further right
-            - move left = mid + 1
+* while left <= right:
+    * mid = (left + right) / 2
+    * if nums[mid] >= n:
+        - this index is a valid candidate
+        - record result = mid
+        - but there might be an even earlier valid index, so keep searching left
+        - move right = mid - 1
+    * else:
+        - nums[mid] is too small, valid answer must be further right
+        - move left = mid + 1
 
-    * return result
-    */
+* return result
+*/
 
     public int searchInsertPosition(int[] nums, int n) {
         int left = 0, right = nums.length - 1;
