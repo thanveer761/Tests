@@ -2,14 +2,14 @@ package BinarySearch;
 
 import org.junit.jupiter.api.Test;
 
-public class FirstOccurrenceGreaterOrEqual{
+public class SearchInsertPosition{
 
     @Test
     public void test1() {
         // positive case: n exists in array, multiple duplicates before and after
         int[] nums = {1, 3, 3, 5, 5, 5, 8, 10};
         int n = 5;
-        int op1 = firstGreaterOrEqual(nums, n);
+        int op1 = searchInsertPosition(nums, n);
         System.out.println(op1); // expect 3 (first index where value >= 5)
     }
 
@@ -18,7 +18,7 @@ public class FirstOccurrenceGreaterOrEqual{
         // negative case: n is bigger than every element -> no valid index exists
         int[] nums = {1, 3, 5, 6};
         int n = 100;
-        int op1 = firstGreaterOrEqual(nums, n);
+        int op1 = searchInsertPosition(nums, n);
         System.out.println(op1); // expect -1 (or nums.length, depending on convention)
     }
 
@@ -27,7 +27,7 @@ public class FirstOccurrenceGreaterOrEqual{
         // edge case: n is smaller than every element -> answer is index 0
         int[] nums = {5, 6, 7, 8};
         int n = 2;
-        int op1 = firstGreaterOrEqual(nums, n);
+        int op1 = searchInsertPosition(nums, n);
         System.out.println(op1); // expect 0
     }
 
@@ -52,9 +52,9 @@ public class FirstOccurrenceGreaterOrEqual{
     * return result
     */
 
-    public int firstGreaterOrEqual(int[] nums, int n) {
+    public int searchInsertPosition(int[] nums, int n) {
         int left = 0, right = nums.length - 1;
-        int result = -1;
+        int result = nums.length;
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
