@@ -73,7 +73,9 @@ i=5, ch=')':
                 }
             }
         }
-
-        return maxLen == 0 ? "" : s.substring(maxStart, maxStart + maxLen);
+        if (maxLen == 0) {
+            return "";
+        }
+        return s.substring(maxStart, maxStart + maxLen);
     }
 }
