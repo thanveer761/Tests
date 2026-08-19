@@ -14,15 +14,29 @@ public class FindDuplicateNumsArray {
 
 
     }
+/*
+* GOAL: find all numbers that appear more than once in the array,
+*        returned in sorted order with no duplicates in the result itself
 
+* initialize seen = empty HashSet (tracks numbers we've encountered before)
+* initialize dups = empty TreeSet (tracks numbers found to be duplicates,
+    kept sorted automatically since TreeSet maintains ascending order,
+    and naturally avoids adding the same duplicate value more than once)
 
-    /*
-    brute force:
-   * traverse with outer index i (0 to n-1)
-   * for each i, traverse inner index j from i+1 to n-1
-   * if nums[i] == nums[j], we found the duplicate → return nums[i]
-   * if no match found after checking all pairs, return -1
-     */
+* traverse each number n in nums
+    * try to add n into seen
+        - Set.add() returns FALSE if n was ALREADY present in the set
+        - if the add fails (meaning n was already seen before):
+            - add n into dups (it's confirmed as a duplicate)
+
+* if dups is empty (no duplicates found at all):
+    - return a special array {-1} as a sentinel signaling "none found"
+
+* otherwise:
+    - create a result array sized to match dups
+    - copy each value from dups into result, in order
+    - return result
+*/
 
     public int[] findDupsNumArr(int[] nums){
 
