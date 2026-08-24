@@ -9,6 +9,9 @@ public class LastNonRepeatingCharacterString {
         String s = "ThanveerAhmed";
         String op = lastNonRepeatingCharacterString(s);
         System.out.println(op);  // Output: d
+        String op1 = lastNonRepeatingCharacterString2(s);
+        System.out.println(op1);
+
     }
 
     @Test
@@ -16,6 +19,8 @@ public class LastNonRepeatingCharacterString {
         String s = "aabbcc";
         String op = lastNonRepeatingCharacterString(s);
         System.out.println(op);  // Output: No non-repeating character found
+        String op1 = lastNonRepeatingCharacterString2(s);
+        System.out.println(op1);
     }
 
     @Test
@@ -23,6 +28,8 @@ public class LastNonRepeatingCharacterString {
         String s = "swiss";
         String op = lastNonRepeatingCharacterString(s);
         System.out.println(op);  // Output: i
+        String op1 = lastNonRepeatingCharacterString2(s);
+        System.out.println(op1);
     }
 
     private String lastNonRepeatingCharacterString(String s) {
@@ -44,7 +51,7 @@ public class LastNonRepeatingCharacterString {
 
         return "No non-repeating character found";
     }
-   /* private String lastNonRepeatingCharacterString(String s) {
+    private String lastNonRepeatingCharacterString2(String s) {
         // Step 1: Build frequency array (ASCII 256)
         int[] freq = new int[256];
         for (int i = 0; i < s.length(); i++) {
@@ -58,6 +65,6 @@ public class LastNonRepeatingCharacterString {
             }
         }
 
-        return "No non-repeating character found";*/
+        return "No non-repeating character found";
 
-}
+}}
