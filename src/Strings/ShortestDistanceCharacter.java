@@ -48,8 +48,8 @@ System.out.println(Arrays.toString(op));
 
     /*
     s="loveleetcode"
-     * -12,-11,-10,0,1,0,0,1,2,3,4,0
-     * 3,2,1,0,1,0,0,1,2,2,1,0
+     * -12,-11,-10,0,1,0,0,1,2,3,4,0---first sweep
+     * 3,2,1,0,1,0,0,1,2,2,1,0---second sweep
      */
     //2 pointers
     public int[] closestOccu(String s,char c) {
