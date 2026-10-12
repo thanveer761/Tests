@@ -29,6 +29,7 @@ public class RotateArray {
     *  each element at index i belongs at index (i + k) % n in the rotated array
     * place it there: result[(i + k) % n] = nums[i]
      * place nums[i] into result[newIndex] (nums[i]=result[newIndex])
+     * finally return the result
      *
 
      */
